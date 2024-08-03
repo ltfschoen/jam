@@ -3,6 +3,7 @@
 ### Table of Contents:
 
 * [Polkadot vs JAM](#polkadot-vs-jam)
+* [Multiple JAM implementations](#multiple-implementations)
 * [Glossary](#glossary)
 * [References](#references)
 
@@ -12,7 +13,10 @@
 	* L1 (parachains/shards) and L2 (cores) are all entirely different applications, hence why Polkadot is a heterogeneous sharded blockchain
 		* Each stores its blockchain definition as bytecode in the state of the blockchain itself
 			* Polkadot 1.0 used WASM for bytecode
-			* JAM uses PVM/RISC-V as its VM of choice
+			* JAM uses PVM/RISC-V as its VM of choice https://x.com/paritytech/status/1788847203622043974
+        * RISC-V is an open-source hardware specification, instruction set architecture
+          * e.g. any software that can compile it to RISC-V (any code since LLVM can target RISC-V), then run it on-chain and it should just work
+        * PVM is translatable from RISC-V, then create and run a PVM instance with gas (lower gas in JAM since more efficient and more parallelism), then save its state and restore that state later, useful for long-running services
 
   * **CoreChains Service**
     * First service deployed in JAM will likely be called CoreChains Service (or Parachains Service) and support allowing existing Polkadot-2-style parachains to be executed on JAM.
@@ -71,6 +75,7 @@
 
 * Hardware level (i.e. Cores)
 	* Data Availability (DA) Layer (In-Core)
+    * Distribute DA floats/hangs there without having to go to a distributed storage solution nor go on on-chain, it can just be there ready for usage for up to 28 days
 		* Distributed Data Lakes (DDL) are the DA layer and are In-Core and interact with multiple Cores (uses PVM)
 		* Cores (uses PVM) each are In-Core and `refine` (aka Join) Work Items from their each of their Work Packages
 		* L2s automatically use Polkadot's native Data Availability (DA) Layer to keep their execution evidence available for a period of time, where that execution evidence posted that is needed to re-execute an L2 block is a blob that is fixed
@@ -87,18 +92,39 @@
       * CorePlay Service will handly all the scheduling
       * **TODO** CorePlay RFC by Dr Gavin Wood https://github.com/polkadot-fellows/RFCs/tree/gav-coreplay
 
+## Multiple JAM Implementations <a id="multiple-implementations"></a>
+
+### Technical Decentralization
+
+* Single implementation is highly centralizing
+* Resilience
+* Avoid same bug across implementations (e.g. Shanghai attack on Ethereum in 2016 where Geth clients went down but not Parity clients)
+
+### Intellectual Decentralization
+
+* Many implementers under different economic umbrellas contributing
+
+* Reference:
+  * https://x.com/paritytech/status/1788847203622043974
+
+## JAM Tour <a id="jam-tour"></a>
+
 ## Glossary <a id="glossary"></a>
 
 * Blockchain
   * State-Transition Function (STF_)
+* Blockspace
+  * Computation that is done without the need to trust someone, where its quality level is the amount you don't need to trust someone, and what it could be used for, and how much there is in terms of throughput and cost
 * Data Availability (DA)
   * Ability for Polkadot validators to commit to having some data available for some period of time, and providing it to other validators
 * In-Core Execution
   * Operations inside a core. Abundance, scalable, as secure as on-chain execution through crypto-economics and ELVES.
 * JAM
+  * JAM is 4th generation blockchain design (1:05 https://x.com/paritytech/status/1788847203622043974)
+  * JAM vs AWS but the cloud is not trustless and held in consensus (1:05:45 https://x.com/paritytech/status/1788847203622043974) so most comparable would be Golem (AWS powered by blockchain but it wasn't held in consensus where state remains persistent)
   * Upgrade stages:
     * Separate Polkadot update to "Userland" layer by the ["Minimal Relay RFC"](https://github.com/polkadot-fellows/RFCs/blob/main/text/0032-minimal-relay.md) that would migrate to "Userland" layer into System Parachain(s) that would be called "CoreChains Service" the DOT token, its transferability, staking, governance, etc.
-    * Replace only the "Kernel" layer of the Polkadot Relay Chain with JAM to make it more general purpose
+    * Drop-in replacement only of the "Kernel" layer of the Polkadot Relay Chain with JAM to make it more general purpose
       * Move Parachains Protocol from "Kernel" layer to "CoreChains Service" of the "Userland" layer
         * Note: "Kernel" layer currently comprises Parachains Protocol (rigid way to use Cores), DOT token, its transferability, staking, governance, etc.
     * Note: Unchanged is the "Cores" layer in stack that represents the "hardware", which provides the computation and DA
@@ -121,16 +147,33 @@
   * Work Package is a group of Work Items
   * Work Packages belong to a Service
   * Work Items may specify exactly what code they execute In-Core, On-Chain, and if/how/what they read and write to/from the Distributed Data Lake.
-* On-Chain Execution
-  * Operations of all validators. Secured by default through economically secured validators. More expensive and constrained, as everyone is executing everything.
-* Proof of Validity (PoV) is the L2's state proof in Polkadot 1.0
-* Parachain Validation Function (PVF) is the combination of the state proof and the parachain block
-* Service
+  * JAM brings the ability to not have to have "Persisent Partitioning"
+    * Scaling Out (Horizontal) is still required to parallelise, divide and conquer, separate workloads into different partitions and processes, but avoids those partitions having to be persistent, since only partition for an instant of time until it all returns back into the Distributed Data Lake of state, where different partitioning may occur at the next instant of time
+  * JAM Analogy
+      * JAM facilitates the thousand-person workforce single company analogy of how large companies really work, where they hire say a thousand people and have them work together, and split up the work they need to do as needed in an efficient way to bring new use-cases and opportunities. https://x.com/paritytech/status/1788847203622043974
+      * Polkadot Analogy would be similar to if that company were to instead subcontract to a thousand smaller companies one-person companies that each have a high cost to interact with each other, since they would each need to handle contracts with other companies, and where you have company walls, and where employees those subcontracted companies stay an employee of that company, and where all the information about eahc of those companies resides with it and not anyone else. https://x.com/paritytech/status/1788847203622043974
+        * e.g. A construction company would have a limited amount of things it could do if it was structured with a thousand single-person subcontracted companies and the skyscraper had to be partitioned with divide and conquer into a thousand separate work contracts for each company to be paid, where each company would bring its **interaction costs** including resources such as project manager, scheduler, payroll manager, legal and finance
+        * e.g. In Ethereum with flashloans its possible to access all the state, ut in Polkadot you have to access different parachains using XCM and associated cross-chain tx fees that is asynchronous. JAM would open the possibilities of what could be deployed on the same machinery (more and new usage paradigms like "Synchronous Composability"), allowing different specialised parachains to synchronously interact with each other. It will unlock things like Accords/SPREE (smart contracts that govern inter-parachain behaviour), including a Tokens Accord with bilateral agreements to prevent parachains minting more tokens than they are meant to and can share tokens without having to go via some native chain or Asset Hub, and where Accords may help with XCM multiparty computation offering multilateral agreements for where more than two chains that are self-sovereign are involved (e.g. pay in currency on Chain A, transaction uses an NFT that sits on another chain, and sender and destination chain are different)
+* JAM 2
+  * Sequencing is not done by JAM as it is handled in the layer above, but the way it is designed will impact MEV opportunities https://x.com/paritytech/status/1788847203622043974
+  * Current Cumulus and parachains does not provide any way for parachains to use "Synchronous Composability"
+* JAM Service
+  * Permissionless, powerful, and scalable on-chain smart contracts, where one of them will be the "Parachains Service" that will largely replicate the Polkadot's current functionality and will be targetable by Cumulus. Power cycle of decommissioning Polkadot relay chain and commissioning JAM chain then the parachains will start finalising blocks again.
   * Described by 3 Entry Points
     * `fn refine()` is Join (from JAM), which describes what the Service does In-Core.
       * When all Polkadot Cores work all in parallel, for different services, Join is when data is distilled into a smaller subset, then passed to the next stage, Accumulate, where the result of all the aforementioned are accumulated into main JAM state, which is the On-Chain Execution part
     * `fn accumulate()` that describes what the service does On-Chain
+    * e.g.
+      * zkSNARK Service with minimal compute to do but high storage required, so this zkSNARK Service could be paired with a compute-intense but storage-light service and share one core at a time
+      * Storage Service like Filecoin that offers proofs for storage of data
+* On-Chain Execution
+  * Operations of all validators. Secured by default through economically secured validators. More expensive and constrained, as everyone is executing everything.
+* Polkadot
+  * Architecture of sharding with many blockchains (AppChains, domain-specific chains) running on WebAssembly that are able to handle specific tasks was the next step after Ethereum and was to be a hefty computation engine that can process a lot of transactions and works with consensus, and became resilient and secure. The Polkadot relay chain has been well architected, resilient, and has bootstrapped the security. Polkadot took the shape of a scalable heterogenous multichain, where it is a blockchain that delivers a lot of blockspace
+* Proof of Validity (PoV) is the L2's state proof in Polkadot 1.0
+* Parachain Validation Function (PVF) is the combination of the state proof and the parachain block
 
 ## References <a id="references"></a>
 
-* https://x.com/kianenigma/status/1812789950741381567
+* JAM article Kian's Garden https://x.com/kianenigma/status/1812789950741381567
+* Gavin Wood on JAM: The next disruptor in Web3 https://x.com/paritytech/status/1788847203622043974
