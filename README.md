@@ -272,3 +272,5 @@
   * https://wiki.polkadot.network/docs/learn-jam-chain
   * https://wiki.polkadot.network/docs/learn-jam-faq
   * [ ] Summarised here
+* Graypaper
+  * https://graypaper.com/graypaper.pdf
