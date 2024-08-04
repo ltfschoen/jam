@@ -4,6 +4,8 @@
 
 * [Polkadot vs JAM](#polkadot-vs-jam)
 * [Multiple JAM implementations](#multiple-implementations)
+* [Questions & Answers](#questions-answers)
+* [Graypaper Summary Notes](#graypaper-summary-notes)
 * [Glossary](#glossary)
 * [References](#references)
 
@@ -68,6 +70,8 @@
           * Split work between them (e.g. using ELVES, which are Polkadot's cynical rollups), or;
           * Optimistically discount their duties (e.g. using Optimistic Rollups)
           * SNARK-based rollups
+  * Transactions
+    * JAM is transactionless, everything is triggered by the servers used by users
 
   * PVM
     * Efficient metering
@@ -107,7 +111,88 @@
 * Reference:
   * https://x.com/paritytech/status/1788847203622043974
 
-## JAM Tour <a id="jam-tour"></a>
+## Questions & Answers <a id="questions-answers"></a>
+
+* What is "audit work" shown in diagram #2 at https://hackmd.io/0gSmXyElT2iKawymS5jJKw?view
+  * [ ] Answer:
+* What do "Guarantors" do as shown in diagram #3 at https://hackmd.io/0gSmXyElT2iKawymS5jJKw?view
+  * [ ] Answer:
+* Where is "Guaranteeing", "Import DA", "Audits DA", "Auditing & Judgements", and "Safrole" as shown in System diagram #4 at https://hackmd.io/0gSmXyElT2iKawymS5jJKw?view
+  * [ ] Answer:
+* What is role of "Proxy nodes" shown in Networking diagram #5 at https://hackmd.io/0gSmXyElT2iKawymS5jJKw?view
+  * [ ] Answer:
+
+## Graypaper Summary Notes <a id="graypaper-summary-notes"></a>
+
+JAM
+	* Smart-contract functionality similar to Ethereum
+	* Secure and scalable in-core/on-chain dualism
+
+Goals
+	* Resilience - resistant from being stopped, corrupted and censored
+	* Generality - able to perform Turing-complete computation
+	* Performant - able to perform fast computation at low cost
+	* Coherent - causal relationships possible between different parts of state impacting how well individual applications may be composed
+	* Accessibility - no negligible barriers to innovation, easy, fast, cheap and permissionless.
+
+Size-synchrony Antagonism 
+	* Describes the combination of the "performance" and "coherence" goals according to information theoretic principles
+	* Example:
+		* Fully-coherent (synchronous) system
+			* As the state-space of information systems grow and utilise for its data processing, the more space the state must occupy and the greater the mean and variance of distances between state components causing interactions to become slower requiring subsystems to consider that distances between interdependent components of state could be significantly different, which requires asynchrony, such that the system necessarily becomes less synchronous
+		* Fully-incoherent (asynchronous) system
+			* Achieved by ignoring security for the moment, and sacrificing coherency, and applying the divide and conquer maxim and fragmenting the state of the system to create two independent smaller-state systems rather than the previous single large-state system, such that this pattern applies a step-curve to the principle behind meta-networks Polkadot or a scaled Ethereum, where;
+				* Intra-system processing: low size, high synchrony
+				* Inter-system processing: high size, low synchrony
+		* Semi-coherent system
+			* Explored by JAM, the middle-ground in the antagonism, which avoids persistent fragmentation of the statespace of the system as with existing approaches, achieved by using a new model of computation that pipelines a highly scalable element to a highly synchronous element, but whilst asynchrony is not avoided, it does increase granularity over how it is traded against size.
+			* Fragmentation can be made ephemeral rather than persistent, drawing upon a coherent state and fragmenting it only for as long as it takes to execute any given piece of processing on it.
+			* Unlike with snark-based L2-blockchain techniques for scaling, this model draws upon crypto-economic mechanisms and inherits their low-cost and high-performance profiles and averts a bias toward centralization.
+
+Service Profile
+	* Declare a general-purpose rules-based service profile for a general-purpose service of a resilient Web3 digital system that offers strong guarantees to be unstoppable and Turing complete and allows for the use-cases.
+	* It needs a general-purpose rule-set to deliver to a massively multiuser application platform
+
+Service
+	* Offers collect/refine/join/accumulate model of computation
+	* Offers CoreChains service that is Polkadot-compatible and where model largely based on architecture of Polkadot
+
+Permissionless - allowing anyone to deploy code as a service on it for a fee commensurate with the resources this code utilizes
+
+Execution - induces execution of the deployed code through the procurement and allocation of core-time, which is a metric of resilient and ubiquitous computation similar to purchasing gas in Ethereum
+
+Scaling approaches in blockchain - TODO section 2
+
+Polkadot Virtual Machine (PVM)
+	* TODO section 4
+	* TODO - additional material important for the protocol definition of pvm in appendices A & B
+
+Safrole consensus protocol - TODO section 4
+
+Common clock - TODO section 4
+
+Formalism - TODO section 4
+
+Full protocol definition 
+	* Part 1 - correct on-chain state-transition formula
+	  * helpful for all nodes wishing to validate the chain state
+	* Part 2 - in sections 14 and 19 the honest strategy for the off-chain actions of any actors who wield a
+
+Validator key
+
+Performance characteristics of the protocol - in section 20 
+
+Serialization and Merklization
+	* TODO - in appendices C & D, it contains various additional material important for the protocol definition
+
+Cryptography
+	* TODO - in appendices E, G, it contains various additional material important for the protocol definition
+
+Glossary
+	* TODO - in appendix H
+
+Values of all simple constant terms used in JAM
+	* TODO - in appendix I
 
 ## Glossary <a id="glossary"></a>
 
@@ -121,7 +206,9 @@
   * Operations inside a core. Abundance, scalable, as secure as on-chain execution through crypto-economics and ELVES.
 * JAM
   * JAM is 4th generation blockchain design (1:05 https://x.com/paritytech/status/1788847203622043974)
+  * JAM protocol lifespan is only designed to last until mid-August of the year 2840 https://x.com/XiliangChen/status/1788898490825011646
   * JAM vs AWS but the cloud is not trustless and held in consensus (1:05:45 https://x.com/paritytech/status/1788847203622043974) so most comparable would be Golem (AWS powered by blockchain but it wasn't held in consensus where state remains persistent)
+  * Polkadot was always been sharded, and fully heterogenous. Now, it will be sharded, heterogenous, AND the boundaries of those shards can be determined flexibly, what @gavofyork is referring to as semi-coherent system https://x.com/kianenigma/status/1790763921600606259 
   * Upgrade stages:
     * Separate Polkadot update to "Userland" layer by the ["Minimal Relay RFC"](https://github.com/polkadot-fellows/RFCs/blob/main/text/0032-minimal-relay.md) that would migrate to "Userland" layer into System Parachain(s) that would be called "CoreChains Service" the DOT token, its transferability, staking, governance, etc.
     * Drop-in replacement only of the "Kernel" layer of the Polkadot Relay Chain with JAM to make it more general purpose
@@ -176,4 +263,12 @@
 ## References <a id="references"></a>
 
 * JAM article Kian's Garden https://x.com/kianenigma/status/1812789950741381567
+  * [X] Summarised here
 * Gavin Wood on JAM: The next disruptor in Web3 https://x.com/paritytech/status/1788847203622043974
+  * [X] Summarised here
+* JAM Diagrams by @xlc https://hackmd.io/0gSmXyElT2iKawymS5jJKw?view
+  * [X] Questions asked here
+* JAM Polkadot Wiki
+  * https://wiki.polkadot.network/docs/learn-jam-chain
+  * https://wiki.polkadot.network/docs/learn-jam-faq
+  * [ ] Summarised here
