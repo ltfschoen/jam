@@ -124,18 +124,18 @@
 
 ## Graypaper Summary Notes <a id="graypaper-summary-notes"></a>
 
-JAM
+* JAM
 	* Smart-contract functionality similar to Ethereum
 	* Secure and scalable in-core/on-chain dualism
 
-Goals
+* Goals
 	* Resilience - resistant from being stopped, corrupted and censored
 	* Generality - able to perform Turing-complete computation
 	* Performant - able to perform fast computation at low cost
 	* Coherent - causal relationships possible between different parts of state impacting how well individual applications may be composed
 	* Accessibility - no negligible barriers to innovation, easy, fast, cheap and permissionless.
 
-Size-synchrony Antagonism 
+* Size-synchrony Antagonism 
 	* Describes the combination of the "performance" and "coherence" goals according to information theoretic principles
 	* Example:
 		* Fully-coherent (synchronous) system
@@ -149,49 +149,49 @@ Size-synchrony Antagonism
 			* Fragmentation can be made ephemeral rather than persistent, drawing upon a coherent state and fragmenting it only for as long as it takes to execute any given piece of processing on it.
 			* Unlike with snark-based L2-blockchain techniques for scaling, this model draws upon crypto-economic mechanisms and inherits their low-cost and high-performance profiles and averts a bias toward centralization.
 
-Service Profile
+* Service Profile
 	* Declare a general-purpose rules-based service profile for a general-purpose service of a resilient Web3 digital system that offers strong guarantees to be unstoppable and Turing complete and allows for the use-cases.
 	* It needs a general-purpose rule-set to deliver to a massively multiuser application platform
 
-Service
+* Service
 	* Offers collect/refine/join/accumulate model of computation
 	* Offers CoreChains service that is Polkadot-compatible and where model largely based on architecture of Polkadot
 
-Permissionless - allowing anyone to deploy code as a service on it for a fee commensurate with the resources this code utilizes
+* Permissionless - allowing anyone to deploy code as a service on it for a fee commensurate with the resources this code utilizes
 
-Execution - induces execution of the deployed code through the procurement and allocation of core-time, which is a metric of resilient and ubiquitous computation similar to purchasing gas in Ethereum
+* Execution - induces execution of the deployed code through the procurement and allocation of core-time, which is a metric of resilient and ubiquitous computation similar to purchasing gas in Ethereum
 
-Scaling approaches in blockchain - TODO section 2
+* Scaling approaches in blockchain - TODO section 2
 
-Polkadot Virtual Machine (PVM)
+* Polkadot Virtual Machine (PVM)
 	* TODO section 4
 	* TODO - additional material important for the protocol definition of pvm in appendices A & B
 
-Safrole consensus protocol - TODO section 4
+* Safrole consensus protocol - TODO section 4
 
-Common clock - TODO section 4
+* Common clock - TODO section 4
 
-Formalism - TODO section 4
+* Formalism - TODO section 4
 
-Full protocol definition 
+* Full protocol definition 
 	* Part 1 - correct on-chain state-transition formula
 	  * helpful for all nodes wishing to validate the chain state
 	* Part 2 - in sections 14 and 19 the honest strategy for the off-chain actions of any actors who wield a
 
-Validator key
+* Validator key
 
-Performance characteristics of the protocol - in section 20 
+* Performance characteristics of the protocol - in section 20 
 
-Serialization and Merklization
+* Serialization and Merklization
 	* TODO - in appendices C & D, it contains various additional material important for the protocol definition
 
-Cryptography
+* Cryptography
 	* TODO - in appendices E, G, it contains various additional material important for the protocol definition
 
-Glossary
+* Glossary
 	* TODO - in appendix H
 
-Values of all simple constant terms used in JAM
+* Values of all simple constant terms used in JAM
 	* TODO - in appendix I
 
 ## Glossary <a id="glossary"></a>
