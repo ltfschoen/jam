@@ -2,12 +2,18 @@
 
 ### Table of Contents:
 
+* [JAM Demo (TypeScript)](#jam-demo)
 * [Polkadot vs JAM](#polkadot-vs-jam)
 * [Multiple JAM implementations](#multiple-implementations)
 * [Questions & Answers](#questions-answers)
 * [Graypaper Summary Notes](#graypaper-summary-notes)
 * [Glossary](#glossary)
+* [Tools](#tools)
 * [References](#references)
+
+## JAM Demo <a id="jam-demo"></a>
+
+Follow the instructions [here](./packages/jam/README.md).
 
 ## Polkadot vs JAM <a id="polkadot-vs-jam"></a>
 
@@ -35,7 +41,8 @@
 		* Normal Execution
 			* Blockchain (is a State-Transition Function STF)
 			* On-Chain Operation (typical blockchain computation) where Main blockchain state updated as outcome of validators executing work
-	* Execution Sharding
+	
+  * Execution Sharding
     * Fully Coherent (Synchronous) vs Fully Incoherent (Asychronous) Systems
       * Graypaper section 2.4
         * Synchronous (coherent) systems have growth limitations before compromising generality, accessibility, and resilience
@@ -208,7 +215,10 @@
   * Computation that is done without the need to trust someone, where its quality level is the amount you don't need to trust someone, and what it could be used for, and how much there is in terms of throughput and cost
 * Data Availability (DA)
   * Ability for Polkadot validators to commit to having some data available for some period of time, and providing it to other validators
-* ELVES - competes with crypto-economic techniques such as SNARKs
+* ELVES
+  * Competes with crypto-economic techniques such as SNARKs
+  * Offers utilization of non-redundant partitioning, where combining this with a proposal-and-auditing game which validators play to weed out and punish invalid computations, and then require that the finality of one network be contingent on all causally-entangled networks. This is the most secure and economically efficient solution since its mechanism recognizes invalid transitions and corrects them before their effect is finalized across the ecosystem of networks. There is an upper limit on the number of networks which may be added.
+
 * Ethereum
   * Dank Sharding Availability System
     * Ethereum protocol that offers an improvement by splitting responsibility for its storage amongst the validator base
@@ -238,6 +248,7 @@
     * Polkadot (single validator set)
     * Ethereum (strategy of heterogenous rollup secured partially by same validator set operating under a coherent incentive framework)
 * Heterogeneous
+  * Allows each shard to be different blockchains (e.g. ETH, etc)
   * Communication properties (such as datagram latency and semantic range), security properties (e.g. costs for reversion, corruption, stalling and censorship) and economic properties (e.g. cost of accepting and processing incoming messages or transactions)
 * In-Core Execution
   * Operations inside a core. Abundance, scalable, as secure as on-chain execution through crypto-economics and ELVES.
@@ -302,6 +313,11 @@
 * Zk-SNARKs
   * Constraints - Trade-off between the proof's size, verification complexity and the computational complexity of generating it. Non-trivial computation, and especially the sort of general-purpose computation laden with binary manipulation which makes smart-contracts so appealing, is hard to fit into the model of snarks
 
+## Tools <a id="tools"></a>
+
+* FluffyLabs https://fluffylabs.dev/
+* JAM Testnet https://github.com/jam-duna/jamtestnet
+
 ## References <a id="references"></a>
 
 * JAM article Kian's Garden https://x.com/kianenigma/status/1812789950741381567
@@ -316,3 +332,9 @@
   * [ ] Summarised here
 * Graypaper
   * https://graypaper.com/graypaper.pdf
+* [ ] jam4s.org/blog
+  * Appendix A.1. - Program Blob Structure
+  * Appendix E of Graypaper - Merkle Tree Structure, Patricia Trie, MMR, Node Operator, Trace Operator (Merkle Proof)
+* sub0 RESET Bangkok
+  * [ ] sub0 RESET Day 3 JAM presentation by Kian
+  * [ ] sub0 RESET Day 3 Jamixir in Elixir
