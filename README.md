@@ -2,6 +2,7 @@
 
 ### Table of Contents:
 
+* [Roadmap](#roadmap)
 * [JAM Demo (TypeScript)](#jam-demo)
 * [Polkadot vs JAM](#polkadot-vs-jam)
 * [Multiple JAM implementations](#multiple-implementations)
@@ -10,6 +11,37 @@
 * [Glossary](#glossary)
 * [Tools](#tools)
 * [References](#references)
+
+## Roadmap <a id="roadmap"></a>
+
+* Tools
+  * Fuzzing
+    * Blocks/states (Milestone M1)
+    * JAMNP (M2)
+  * Telemetry, telemetry dashboard, RPCs
+  * Testnet, CLI flags, Docker compose
+  * UX/UI/indexer
+  * GP Reader, PVM debugger
+  * SDK to build JAM Services (e.g. Rust)
+  * RFPs on OpenGov for additional tooling
+  * JAM Services explorer (collaborate with OpenSquare/Subsquare)
+* Services
+  * Test Services
+  * Production JAM Services (e.g. CoreVMs, CorePlay)
+* Tech Topic
+  * Tiny vs Toaster RS Encoding + Availability
+  * Key Management Lifecycle (Milestone M1 vs Production)
+* General
+  * JAM Collective 
+  * JAM Implementer calls and relationship with [PolkaJAM](https://www.polkajam.com/)
+  * Knowledge sharing where to put docs and tutorials
+  * Group goals to accomplish next meetup and where
+
+* TODO: Add my written notes from JAM0 discussion amongst JAM implementers at Valia Hotel 
+
+### Links
+
+* Polkadot JAM Roadmap 12 Nov 2024 - https://www.youtube.com/watch?v=Jq8XBs1wPhg
 
 ## JAM Demo <a id="jam-demo"></a>
 
@@ -338,3 +370,4 @@ Follow the instructions [here](./packages/jam/README.md).
 * sub0 RESET Bangkok
   * [ ] sub0 RESET Day 3 JAM presentation by Kian
   * [ ] sub0 RESET Day 3 Jamixir in Elixir
+* https://github.com/openguild-labs/learn-jam
