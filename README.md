@@ -43,9 +43,9 @@
 
 * Polkadot JAM Roadmap 12 Nov 2024 - https://www.youtube.com/watch?v=Jq8XBs1wPhg
 
-## JAM Demo <a id="jam-demo"></a>
+## JAM Demo (TypeScript) <a id="jam-demo"></a>
 
-Follow the instructions [here](./packages/jam/README.md).
+[JAM Demo (TypeScript)](https://github.com/ltfschoen/jam-node-ts)
 
 ## Polkadot vs JAM <a id="polkadot-vs-jam"></a>
 
@@ -340,10 +340,62 @@ Follow the instructions [here](./packages/jam/README.md).
 * Proof of Validity (PoV) is the L2's state proof in Polkadot 1.0
 * Parachain Validation Function (PVF) is the combination of the state proof and the parachain block
 
+* Safrole
+  * About
+    * Named after novel Sassafras production mechanism of which it is a simplified variant, is a stateful system rather more complex than the Nakamoto consensus
+    * JAM Block Production Mechanism. Part of JAM Hybrid Consensus Mechanism
+    * Similar to Polkadot's BABE/GRANDPA Hybrid Consensus Mechanism
+  * Purpose
+    * Block production consensus mechanism limits the rate at which new blocks may be authored and, ideally, preclude the possibility of "forks" (multiple blocks with equal numbers of ancestors
+  * Implementation
+    * Safrole limits the possible author of any block within any given six-second timeslot to a single key-holder from within a prespecified set of validators
+    * Under normal operation the identity of the key-holder of any future timeslot will have a very high degree of anonymity. As a side effect of its operation, we can generate a high-quality pool of entropy which may be used by other parts of the protocol and is accessible to services running on it.
+    * Tightly scoped role, where core of Safrole's state, γ, is independent of the rest of the protocol. It interacts with other portions of the protocol through ι and κ, the prospective and active sets of validator keys respectively; τ, the most recent block’s timeslot; and η, the entropy accumulator.
+    * Safrole protocol generates, once per epoch, a sequence of E sealing keys, one for each potential block within a whole epoch. Each block header includes its timeslot index Ht (the number of six-second periods since the Jam Common Era began) and a valid seal signature Hs, signed by the sealing key corresponding to the timeslot within the aforementioned sequence. Each sealing key is in fact a pseudonym for some validator which was agreed the privilege of authoring a block in the corresponding timeslot.
+    In order to generate this sequence of sealing keys in regular operation, and in particular to do so without making public the correspondence relation between them and the validator set, we use a novel cryptographic structure known as a Ringvrf, utilizing the Bandersnatch curve. Bandersnatch Ringvrf allows for a proof to be provided which simultaneously guarantees the author controlled a key within a set (in our case validators), and secondly provides an output, an unbiasable deterministic hash giving us a secure verifiable random function (vrf). This anonymous and secure random output is a ticket and validators’ tickets with the best score define the new sealing keys allowing the chosen validators to exercise their privilege and create a new block at the appropriate time.
+
+  * References:
+    * Section 6 of Graypaper
+
 * SPREE - technical proposal that would utilize Polkadot's unique shared-security and improve composability, though blockchains would still remain isolated.
 
 * Zk-SNARKs
   * Constraints - Trade-off between the proof's size, verification complexity and the computational complexity of generating it. Non-trivial computation, and especially the sort of general-purpose computation laden with binary manipulation which makes smart-contracts so appealing, is hard to fit into the model of snarks
+
+## Notation <a id="notation">
+
+### LaTeX VSCode Extensions
+
+* VSCode Extensions for LaTeX
+  * Install `tlmgr` binary by downloading BasicTeX.pkg from https://www.tug.org/mactex/morepackages.html
+  * Run `shasum -a 512 BasicTeX.pkg` to validate checksum matches
+  * Restart VSCode and install relevant LaTeX extensions that use `chktex`
+
+### Convert LaTeX to PDF and View
+
+* Install https://ryan-holben.github.io/tex/latex/installation/macos/2016/08/21/installing-tex-on-mac/
+```
+brew install texlive
+brew install basictex
+echo "export PATH="/usr/local/texlive/2024basic/bin/universal-darwin:$PATH" >> ~/.zprofile"
+```
+
+View directory of config file by running `kpsewhich -var-value=TEXMFSYSCONFIG`
+
+Edit file /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-config/tlmgr/config, appending `update,option,install` to it.
+
+Run the following
+```
+mkdir /opt/homebrew/Cellar/texlive/20240312_3/share/tlpkg/backups
+tlmgr update --self
+tlmgr install texliveonfly
+texliveonfly -c xelatex graypaper.tex
+open -a Preview.app graypaper.pdf
+```
+
+* Note: It is not possible to run `pdflatex --output-directory=./ ./graypaper.tex` since it outputs `! LaTeX Error: Too many math alphabets used in version normal.`
+
+* Note: Additional options https://gist.github.com/peterhurford/75957ba9335e755013b87254ec85fab1?permalink_comment_id=3902372#gistcomment-3902372
 
 ## Tools <a id="tools"></a>
 
@@ -371,3 +423,5 @@ Follow the instructions [here](./packages/jam/README.md).
   * [ ] sub0 RESET Day 3 JAM presentation by Kian
   * [ ] sub0 RESET Day 3 Jamixir in Elixir
 * https://github.com/openguild-labs/learn-jam
+* Knowledge base of the JAM implementors teams at https://docs.jamcha.in/   
+  * https://github.com/JamBrains/jam-docs

@@ -1,0 +1,68 @@
+\noindent
+
+\subsection{TODO}\label{sec:todo}
+\begin{description}
+  \item[$\bullet$ ${E_T}$] TODO
+\end{description}
+
+\subsection{State}\label{sec:state}
+\begin{description}
+  \item[$\bullet$ $\sigma$] State Identifier
+  \item[$\bullet$ $\Upsilon$] State Transition Function (STF)
+\end{description}
+
+\subsection{Misc}\label{sec:misc}
+\begin{description}
+  \item[$\bullet$ $y \prec x$] precedes operator, relation to indicate one term may be defined purely in terms of another
+  \item[$\bullet$ $\mathcal{U}$] substitute-if-nothing function
+  \item[$\bullet$ $i$, $j$] used for numerical indices
+  \item[$\bullet$ $\none$] nothing
+\end{description}
+
+\subsection{Sets}\label{sec:sets}
+\begin{description}
+  \item[$\bullet$ $x$, $y$] item of a set or sequence
+  \item[$\bullet$ $\mathbf{s}$] set
+  \item[$\bullet$ $\powset{\mathbf{s}}$] set power (section 3.3)
+  \item[$\bullet$ $|\mathbf{s}|$] set cardinality (section 3.3)
+  \item[$\bullet$ $f^{\#}$] function applied to all members of a set to yield a new set (section 3.3) 
+  \item[$\bullet$ $\disjoint$] set-disjointness relation (section 3.3)
+  \item[$\bullet$ $\Longleftrightarrow$] TODO (section 3.3)
+  \item[$\bullet$ $\error$] indicates unexpected failure of an operation or that a value is invalid or unexpected (section 3.3) 
+\end{description}
+
+\subsection{Numbers}\label{sec:numbers}
+\begin{description}
+  \item[$\bullet$ $\N$] denotes the set of naturals including zero
+  \item[$\bullet$ $\N_n$] restricts the set of naturals to values less than $n$.
+    \\ - Formally, $\N = \{0, 1, \dots \}$ and $\N_n = \{ x \mid x \in \N, x < n \}$
+  \item[$\bullet$ $\N_L$] is equivalent to $\N_{2^{32}}$ and denotes the set of lengths
+  of octet sequences that must have limited size to be stored practically
+  \item[$\bullet$ $\rem$] modulo operator
+  \item[$\bullet$ $5 \div 3 = 1 \remainder 2$] remainder of quotient operation
+\end{description}
+
+\subsection{Integers}\label{sec:integers}
+\begin{description}
+  \item[$\bullet$ $\mathbb{Z}$] denotes the set of integers
+  \item[$\bullet$ $\mathbb{Z}_{a \dots b}$] denotes the set of integers within the interval $[a, b)$
+    \\ - Formally, $\mathbb{Z}_{a \dots b} = \{ x \mid x \in \mathbb{Z}, a \le x < b \}$ (e.g. $\mathbb{Z}_{2 \dots 5} = \{ 2, 3, 4 \}$).
+    \\ - $\mathbb{Z}_{a \dots +b}$ denotes the offset/length form of this set, which is a short form of $\mathbb{Z}_{a \dots a+b}$.
+\end{description}
+
+
+
+% Example indentation
+% \begin{enumerate}[leftmargin=0.2cm]
+%   \item This is the first item with indentation.
+%   \modifyenum{leftmargin=0.4cm}
+%   \item This is a normal item with a \verb|0.4cm| indentation.
+%   \modifyenum{leftmargin=0.8cm}
+%   \item This is an indented item with a long text that causes a line break. Now, the enumeration is continued and the new line is indented. 
+%   \modifyenum{leftmargin=0.4cm}
+%   \item This is a normal item with a \verb|0.4cm| indentation.
+%   \modifyenum{resume,leftmargin=*}
+%   \item Here is a normal flush-left item.
+%   \item Here is a normal flush-left item.
+%   \item Here is a normal flush-left item.
+% \end{enumerate}
