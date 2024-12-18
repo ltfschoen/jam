@@ -19,6 +19,13 @@
   \item[$\bullet$ $\none$] nothing
 \end{description}
 
+\subsection{Functions and Operations}\label{sec:functions}
+\begin{description}
+  \item[$\bullet$ $\exists$] exists
+  \item[$\bullet$ $\Longleftrightarrow$] TODO (section 3.2)
+  \item[$\bullet$ $\bigwedge_{i=0}^{x-1}$] big wedge
+\end{description}
+
 \subsection{Sets}\label{sec:sets}
 \begin{description}
   \item[$\bullet$ $x$, $y$] item of a set or sequence
@@ -27,7 +34,6 @@
   \item[$\bullet$ $|\mathbf{s}|$] set cardinality (section 3.3)
   \item[$\bullet$ $f^{\#}$] function applied to all members of a set to yield a new set (section 3.3) 
   \item[$\bullet$ $\disjoint$] set-disjointness relation (section 3.3)
-  \item[$\bullet$ $\Longleftrightarrow$] TODO (section 3.3)
   \item[$\bullet$ $\error$] indicates unexpected failure of an operation or that a value is invalid or unexpected (section 3.3) 
 \end{description}
 
@@ -50,7 +56,80 @@
     \\ - $\mathbb{Z}_{a \dots +b}$ denotes the offset/length form of this set, which is a short form of $\mathbb{Z}_{a \dots a+b}$.
 \end{description}
 
+\subsection{Dictionaries}\label{sec:dictionaries}
+\begin{description}
+  \item[$\bullet$ $\dict{\mathrm{K}}{\mathrm{V}}$] denotes a dictionary mapping from domain $\mathrm{K}$ to range $\mathrm{V}$
+  \item[$\bullet$ $\mathbb{D}$] set of all dictionaries
+  \item[$\bullet$ $(k \mapsto v)$] key-value pair in dictionary
+  \item[$\bullet$ $&\mathbb{D} \subset \big \{ \{ (k \mapsto v) \} \big \}$] defines a dictionary as a member of the set of all dictionaries $\mathbb{D}$ and a set of pairs $p = (k \mapsto v)$
+  \item[$\bullet$ $\forall \mathbf{d} \in\ &\mathbb{D} : \forall (k \mapsto v) \in \mathbf{d} : \exists! v' : (k \mapsto v') \in \mathbf{d}$] dictionary's members must associate at most one unique value for any key $k$
+  \item[$\bullet$ $\forall \mathbf{d} \in \mathbb{D}&: \mathbf{d}[k] \equiv \begin{cases}
+    v & \text{if}\ \exists k : (k \mapsto v) \in \mathbf{d} \\
+    \none & \otherwise
+  \end{cases}$] define the subscript operator for a dictionary $d$
+    \\ - Note, assumes the key exists in the dictionary, otherwise the result is undefined and any block relying on it must be considered invalid
+  \item[$\bullet$ $\forall \mathbf{d} \in \mathbb{D}&, \mathbf{s} \subseteq K: \mathbf{d} \setminus \mathbf{s} \equiv \{ (k \mapsto v): (k \mapsto v) \in \mathbf{d}, k \not \in \mathbf{s} \}$] define the subtraction operator for a dictionary $d$
+  \item[$\bullet$ $\dict{K}{V} &\subset \mathbb{D}$, \\
+    $\dict{K}{V} &\equiv \big \{ \{ (k \mapsto v) \mid k \in K \wedge v \in V \} \big \}$ ] denotes a typed dictionary mapping from domain $\mathrm{K}$ to range $\mathrm{V}$ as a set of pairs $p$ of the form $(k \mapsto v)$
+  \item[$\bullet$ $\keys{\mathbf{d} \in \mathbb{D}} &\equiv \{\ k \mid \exists v : (k \mapsto v) \in \mathbf{d}\ \}$, \\
+  $\mathcal{V}(\mathbf{d} \in \mathbb{D}) &\equiv \{\ v \mid \exists k : (k \mapsto v) \in \mathbf{d}\ \}$] \\
+  denotes the active domain (\ie set of keys) of a dictionary $\mathbf{d} \in \dict{K}{V}$,
+  using $\keys{\mathbf{d}} \subseteq K$, and range (\ie set of values) $\mathcal{V}(\mathbf{d}) \subseteq V$,
+  where since the co-domain of $\mathcal{V}$ is a set, if different keys with equal values appear in the dictionary,
+  the set will only contain one such value.
+  \item[$\bullet$ $\forall \mathbf{d} \in \mathbb{D}, \mathbf{e} \in \mathbb{D}: \mathbf{d} \cup \mathbf{e} \equiv (\mathbf{d} \setminus \keys{\mathbf{e}}) \cup \mathbf{e}$] dictionaries combined through the union operator $\cup$,
+  which prioritizes the right-side operand in the case of a key-collision.
+  \item[$\bullet$ $\keys{\mathbf{d}}$] returns active domain (set of keys) of dictionary
+  \item[$\bullet$ $\mathcal{V}(\mathbf{d})$] returns range (set of values) of dictionary
+\end{description}
 
+\subsection{Tuples}\label{sec:tuples}
+\begin{description}
+  \item[About] Tuples are groups of values where each item
+may belong to a different set
+  \item[$\bullet$ $(a, b)$] tuple notation
+  \item[$\bullet$ $(\N, \N)$] set of natural pairs
+  \item[$\bullet$ $$T = \ltuple\isa{a}{\N}\ts\isa{b}{\N}\rtuple$] tuple with named components
+  \item[$\bullet$ $t_a$, $t_b$] access named components of tuple
+  \item[$\bullet$] e.g. denote an item $t \in T$ through subscripting its name, so for some $t = \ltup\is{a}{3}\ts\is{b}{5}\rtup$, $t_a = 3$ and $t_b = 5$
+\end{description}
+
+\subsection{Sequences}\label{sec:sequences}
+\begin{description}
+  \item[$\bullet$ $\seq{T}$] set of sequences with elements from set $T$, and defines a partial mapping $\N \to T$
+  \item[$\bullet$ $\seq{T}_n$] set of sequences with exactly $n$ elements from set $T$, and defines a complete mapping $\N_n \to T$
+  \item[$\bullet$ $\seq{T}_{:n}$] set of sequences with at most $n$ elements
+  \item[$\bullet$ $\seq{T}_{n:}$] set of sequences with at least $n$ elements
+  % FIXME - why doesn't this compile?
+  % \item[$\bullet$ $\mathbf{s}[i]$] access item at index $i$ in sequence $\mathbf{s}$
+  \item[$\bullet$ $\mathbf{s}_i$] access item at index $i$ in sequence $\mathbf{s}$
+  \item[$\bullet$ $[0, 1, 2, 3]_{\dots2} = [0, 1]$ and $[0, 1, 2, 3]_{1\dots+2} = [1, 2]$] range in a sequence
+  \item[$\bullet$ $|\mathbf{s}|$] length of sequence
+  \item[$\bullet$ $\mathbf{s}[i]^\circlearrowleft \equiv \mathbf{s}[\,i \rem |\mathbf{s}|\,]$] modulo subscription
+  \item[$\bullet$ $\text{last}(\mathbf{s}) \equiv x$] function that returns final element $x$ of a sequence $\mathbf{s} = \sq{..., x}$
+  % TODO - up to here
+  \item[$\bullet$ $\frown$] sequence concatenation operator
+  \item[$\bullet$ $\wideparen{\mathbf{x}}$] concatenate-all operator for sequences of sequences
+  \item[$\bullet$ $x \doubleplus i$] element concatenation
+\end{description}
+
+\subsection{Boolean \& Octets}\label{sec:bool-octets}
+\begin{description}
+  \item[$\bullet$ $\mathbb{B}_s$] set of Boolean strings of length $s$
+  \item[$\bullet$ $\Y$] set of octet strings ("blobs") of arbitrary length
+  \item[$\bullet$ $\Y_x$] set of octet strings of length $x$
+  \item[$\bullet$ $\Y_\$$] subset of $\Y$ which are ASCII-encoded strings
+  \item[$\bullet$ $\text{bits}(\Y)$] sequence of bits representing octet sequence
+\end{description}
+
+\subsection{Cryptography}\label{sec:cryptography}
+\begin{description}
+  \item[$\bullet$ $\H$] set of 256-bit values from cryptographic functions (equivalent to $\Y_{32}$)
+  \item[$\bullet$ $\H^0$] equals $[0]_{32}$
+  \item[$\bullet$ $\mathcal{H}(m)$] Blake2b 256-bit hash function
+  \item[$\bullet$ $\mathcal{H}_K(m)$] Keccak 256-bit hash function
+  \item[$\bullet$ $\mathcal{H}_x(m)$] first $x$ octets of hash
+\end{description}
 
 % Example indentation
 % \begin{enumerate}[leftmargin=0.2cm]
