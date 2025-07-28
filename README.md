@@ -551,4 +551,4 @@ open -a Preview.app graypaper.pdf
   * [X] 3.3-Sets https://graypaper.com/lectures/?section=3.3-Sets
   * [X] 3.4-Numbers https://graypaper.com/lectures/?section=3.4-Numbers
   * [X] 3.5-Dictionaries https://graypaper.com/lectures/?section=3.5-Dictionaries
-  * [X] 3.6-Truples https://graypaper.com/lectures/?section=3.6-Truples
+  * [X] 3.6-Tuples https://graypaper.com/lectures/?section=3.6-Truples
