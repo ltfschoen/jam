@@ -4,7 +4,7 @@
 
 We, the members of the JAM Implementers DAO, in order to uphold the principles of inclusivity, equality, open participation, and decentralization, to secure the resilience of the Polkadot ecosystem through multiple client implementations of the JAM protocol, and to protect the rights and interests of all participants, do establish these Constitutional Safeguards as binding principles for the governance and operation of the JAM Implementers DAO for the Polkadot ecosystem.
 
-These Safeguards shall serve to detect, recognize, and constrain harmful behaviors before they escalate, and shall be enforced through blockchain-native mechanisms rather than political discretion, ensuring that the JAM Implementers DAO honors its declared service profile regardless of the desires, wealth, or power of any economic actors.
+These Safeguards shall serve to detect, recognize, and constrain harmful behaviors before they escalate, and shall be implemented through blockchain-native mechanisms to ensure adherence to constitutional values rather than political discretion, ensuring that the JAM Implementers DAO honors its declared service profile regardless of the desires, wealth, or power of any economic actors.
 
 ## ARTICLE I: FOUNDATIONAL VALUES
 
@@ -59,47 +59,47 @@ The JAM Implementers DAO shall maintain the following governance checks and bala
 4. Cross-collective governance mechanisms to prevent siloed decision-making among implementation teams.
 5. Support for JAM implementers who successfully deliver JAM protocol clients to be considered for Technical Fellowship membership through established pathways.
 
-### Section 2: On-Chain Enforcement Mechanisms
+### Section 2: On-Chain Mechanisms to Ensure Constitutional Accountability
 
-The JAM Implementers DAO shall implement the following enforcement mechanisms:
+The JAM Implementers DAO shall implement the following mechanisms to ensure constitutional accountability:
 
 1. Automatic execution of governance rules through code, not political discretion.
-2. Transparent, immutable records of all governance actions and violations.
-3. Programmatic enforcement of proportional responses.
-4. Cryptographic proof of governance violations that cannot be denied or reinterpreted.
+2. Transparent, immutable records of all governance actions and instances of non-compliance.
+3. Programmatic implementation of proportional responses.
+4. Cryptographic proof of governance non-compliance that cannot be denied or reinterpreted.
 5. Client implementation verification through automated testing frameworks.
 
 ### Section 3: Economic Incentives
 
-The JAM Implementers DAO shall align economic incentives with constitutional values through:
+The JAM Implementers DAO shall align economic incentives with constitutional accountability through:
 
-1. Automatic financial penalties for governance violations through smart contracts.
+1. Automatic incentive adjustments for governance non-compliance through smart contracts.
 2. Reward mechanisms for constitutional compliance and protocol implementation contributions.
 3. Economic disincentives for actions that threaten implementation quality or interoperability.
-4. Transparent accounting of all penalties and rewards.
+4. Transparent accounting of all incentives and disincentives.
 5. Funding allocation based on implementation milestones and quality metrics.
 
-### Section 4: Decentralized Enforcement
+### Section 4: Decentralized Oversight to Ensure Constitutional Alignment
 
-The JAM Implementers DAO shall ensure decentralized enforcement through:
+The JAM Implementers DAO shall ensure decentralized oversight through:
 
 1. Distributed authority across multiple governance bodies and implementation teams.
 2. Cryptographic verification of governance actions.
-3. Permissionless participation in enforcement mechanisms.
+3. Permissionless participation in oversight mechanisms.
 4. Elimination of single points of failure in governance systems.
-5. Immutable records of all enforcement actions.
+5. Immutable records of all governance actions.
 6. Multi-signature requirements for critical decisions.
 
 ### Section 5: Accountability Mechanisms
 
 The JAM Implementers DAO shall implement practical accountability mechanisms including:
 
-1. Clear, executable consequences for violations that don't require consensus to enforce.
-2. Graduated sanctions proportional to violation severity.
-3. Transparent reporting of all violations and responses.
-4. Mandatory conflict of interest disclosures for all governance participants.
+1. Clear, executable outcomes for non-compliance that don't require consensus to implement.
+2. Graduated measures proportional to non-compliance severity.
+3. Transparent reporting of all instances of non-compliance and responses.
+4. Mandatory conflict of interest disclosures for all governance participants since hidden conflicts of interest directly undermine governance integrity and can lead to decisions that benefit individuals at the expense of the ecosystem.
 5. Implementation team accountability for client performance and security.
-6. Mechanisms for remediation and restoration following violations or failures.
+6. Mechanisms for remediation and restoration following instances of non-compliance or failures.
 
 ## ARTICLE IV: MULTI-LAYERED ACCOUNTABILITY
 
@@ -115,15 +115,15 @@ The JAM Implementers DAO shall maintain transparent systems that:
 
 ### Section 2: Expert and Developer Accountability
 
-The JAM Implementers DAO shall enforce expert and developer accountability through:
+The JAM Implementers DAO shall ensure expert and developer accountability through:
 
-1. Prohibition of disclaiming responsibility for preventable failures.
-2. Clear attribution of code authorship and review responsibility.
-3. Liability frameworks for negligent security practices.
-4. Prohibition of "not financial/technical advice" disclaimers to evade responsibility.
+1. Prohibition of disclaiming accountability for preventable failures.
+2. Clear attribution of code authorship and review accountability.
+3. Accountability frameworks to ensure appropriate security practices.
+4. Prohibition of "not financial/technical advice" disclaimers to evade accountability.
 5. Mandatory code review processes for all client implementations.
 6. Required security certifications for critical infrastructure components.
-7. Ongoing responsibility for maintenance of deployed systems.
+7. Ongoing accountability for maintenance of deployed systems.
 
 ### Section 3: Systemic Vulnerability Prevention
 
@@ -139,9 +139,9 @@ The JAM Implementers DAO shall prevent systemic vulnerabilities through:
 
 ### Section 4: Middleware and Integration Oversight
 
-The JAM Implementers DAO shall implement middleware and integration oversight through:
+The JAM Implementers DAO shall ensure middleware and integration security through:
 
-1. Clear responsibility assignment for integration security.
+1. Clear accountability assignment for integration security.
 2. Standardized security protocols for cross-chain interactions.
 3. Mandatory audits of bridges, oracles, and middleware.
 4. Interoperability testing between different client implementations.
@@ -180,12 +180,12 @@ The JAM Implementers DAO shall maintain tiered emergency response systems that:
 
 ### Section 3: Signer Accountability
 
-The JAM Implementers DAO shall enforce signer accountability through:
+The JAM Implementers DAO shall ensure signer accountability through:
 
 1. Clear response time requirements for different categories of actions.
 2. Mandatory delegation mechanisms for temporary unavailability.
 3. Performance metrics and public dashboards for signer activity.
-4. Economic penalties for non-responsiveness.
+4. Economic incentives and disincentives to ensure responsiveness.
 5. Formal removal procedures for consistently inactive signers.
 
 ### Section 4: Backup Governance
@@ -226,7 +226,7 @@ The JAM Implementers DAO shall ensure blockchain-native implementation of govern
 1. Utilization of flexible origin patterns for authority delegation.
 2. Implementation of on-chain activity tracking with automatic threshold adjustments.
 3. Creation of graduated emergency response triggers accessible to multiple collectives.
-4. Enforcement of mandatory delegation through cryptographic verification.
+4. Implementation of mandatory delegation through cryptographic verification.
 5. Enablement of transparent, immutable records of governance participation and emergency responses.
 6. Automatic execution of predefined response playbooks.
 
@@ -235,7 +235,7 @@ The JAM Implementers DAO shall ensure blockchain-native implementation of govern
 The following actions shall be expressly prohibited within the JAM Implementers DAO:
 
 1. Prolonged blockades or restrictions of basic protocol necessities that cause humanitarian crises for participants without achieving the objective of addressing bad actors.
-2. Collective punishment of individuals with proof of personhood.
+2. Collective accountability measures that impact individuals with proof of personhood for actions they did not personally commit.
 3. Use of constitutional mechanisms by leaders to serve political interests, whether for:
    a. External leverage in diplomatic arrangements with other DAOs or ecosystems, or
    b. Internal advantage among implementation teams, embedded ecosystems, parachain teams, or governance factions.
@@ -268,7 +268,7 @@ These Constitutional Safeguards may be amended through the following process:
 4. Public discussion period of no less than 28 days.
 5. Approval through the appropriate OpenGov track with enhanced majority requirements.
 6. Implementation of approved amendments with appropriate transition periods.
-6. Verification that amendments do not compromise client implementation interoperability.
+7. Verification that amendments do not compromise client implementation interoperability.
 
 ### Section 3: Continuous Improvement
 
@@ -283,7 +283,7 @@ The JAM Implementers DAO shall continuously improve these Constitutional Safegua
 
 ## ARTICLE VIII: RATIFICATION
 
-These Constitutional Safeguards shall take effect upon approval through the OpenGov process and shall be binding upon all participants in the JAM Implementers DAO.
+These Constitutional Safeguards shall take effect upon approval through the OpenGov process and shall be binding upon all participants in the JAM Implementers DAO. The binding nature of these safeguards is essential to ensure effective governance, protect against ecosystem threats, and provide the necessary foundation for the incentive and disincentive mechanisms described throughout this document.
 
 The architecture of Polkadot's ranked collective pallet and origin composition system enables the sophisticated governance mechanisms described herein, effectively addressing common governance paralysis problems that have plagued many DAOs. By allowing dynamic authority delegation between specialized collectives and implementation teams, the system creates redundancy without sacrificing security or accountability.
 
@@ -309,3 +309,22 @@ The architecture of Polkadot's ranked collective pallet and origin composition s
 2. No single client implementation shall be allowed to dominate the network.
 3. Economic incentives shall be designed to encourage the adoption of multiple client implementations.
 4. Implementation teams shall collaborate on security issues while maintaining independent codebases.
+
+## ARTICLE X: VERSION CONTROL
+
+### Section 1: Document Version History
+
+This constitution is versioned to track changes and improvements over time:
+
+| Version | Date | Description | Contributors |
+|---------|------|-------------|-------------|
+| v0.01 | 2025-07-28 | Initial draft of JAM Implementers DAO Constitutional Safeguards | JAM Implementers DAO |
+| v0.02 | 2025-07-29 | Refined language around consequences and accountability measures while maintaining strong boundaries for prohibited actions that could harm the ecosystem. Added version control section. | JAM Implementers DAO, with feedback from community members on balancing language and focusing on rewards. |
+
+### Section 2: Amendment Guidelines
+
+When updating this constitution:
+1. Increment the version number appropriately (major.minor format)
+2. Document all changes in the version history table
+3. Acknowledge contributors who provided valuable feedback
+4. Ensure changes follow the amendment process outlined in Article VII
