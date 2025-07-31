@@ -244,6 +244,9 @@ The following actions shall be expressly prohibited within the JAM Implementers 
 6. Requiring specialized governance work without secure payment commitments, proper attribution, or legal protection.
 7. Intentional implementation of incompatible clients that could cause network splits.
 8. Withholding critical security information from other implementation teams.
+9. Imposing or encouraging unsustainable work practices that endanger contributor health, including excessive work hours, lack of rest periods, or unreasonable deadlines.
+10. Retaliating against contributors who raise concerns about team health or work conditions.
+11. Refusing to adopt or implement appropriate codes of conduct or health standards when representing Polkadot in any capacity, especially when receiving treasury funding or claiming official status.
 
 ## ARTICLE VII: IMPLEMENTATION AND AMENDMENTS
 
@@ -320,6 +323,7 @@ This constitution is versioned to track changes and improvements over time:
 |---------|------|-------------|-------------|
 | v0.01 | 2025-07-28 | Initial draft of JAM Implementers DAO Constitutional Safeguards | JAM Implementers DAO |
 | v0.02 | 2025-07-29 | Refined language around consequences and accountability measures while maintaining strong boundaries for prohibited actions that could harm the ecosystem. Added version control section. | JAM Implementers DAO, with feedback from community members on balancing language and focusing on rewards. |
+| v0.03 | 2025-07-31 | Added Article XI on Sustainable Work Standards and Ecosystem Wellbeing with comprehensive provisions including: scientific evidence preamble, emergency work protocols with mathematical consistency, balanced multi-stakeholder governance, expanded endorsement requirements covering all ecosystem branding, and resource-constrained implementation guidance. Expanded prohibited actions to include unsustainable work practices. | JAM Implementers DAO, with feedback from ecosystem health advocates and reference to scientific research on overwork health impacts. |
 
 ### Section 2: Amendment Guidelines
 
@@ -328,3 +332,137 @@ When updating this constitution:
 2. Document all changes in the version history table
 3. Acknowledge contributors who provided valuable feedback
 4. Ensure changes follow the amendment process outlined in Article VII
+
+## ARTICLE XI: SUSTAINABLE WORK STANDARDS AND ECOSYSTEM WELLBEING
+
+**Preamble**: The JAM Implementers DAO recognizes that extreme overwork poses documented health risks and can lead to serious consequences including death. Research has shown that working more than 54 hours per week significantly increases health risks, and the World Health Organization has reported that overwork contributes to hundreds of thousands of deaths annually worldwide. These standards are established not merely as aspirational goals but as essential protections against documented harms that have affected workers across multiple industries including technology, finance, and retail.
+
+### Section 1: Core Principles
+
+The JAM Implementers DAO recognizes that the health, wellbeing, and sustainability of all ecosystem participants are essential to the long-term success of the ecosystem. Therefore:
+
+1. The health and wellbeing of all participants shall be considered a fundamental constitutional value.
+2. Sustainable work practices shall be mandatory for all ecosystem activities, whether treasury-funded, volunteer-based, or otherwise.
+3. No economic incentive shall be designed in a way that encourages or requires harmful overwork.
+4. The JAM Implementers DAO shall actively prevent conditions that lead to burnout, exhaustion, or health deterioration.
+5. These protections shall apply equally to all participants regardless of role, seniority, compensation model, or contribution status.
+6. No disclaimer, waiver, terms and conditions, or other legal instrument may be used to circumvent these standards or require participants to surrender these protections.
+7. These standards are aligned with Article 24 of the Universal Declaration of Human Rights, which establishes that "Everyone has the right to rest and leisure, including reasonable limitation of working hours and periodic holidays with pay."
+8. Participation in multiple roles (such as governance and technical implementation) shall not be used as justification for failing to satisfy critical accountabilities, particularly those essential to network operations or security. When workload across multiple roles threatens to compromise critical responsibilities, participants must prioritize their core accountabilities or delegate appropriately. Participants shall not:
+   a. Occupy governance positions without actively fulfilling associated responsibilities.
+   b. Claim ignorance of governance matters due to focus on other roles.
+   c. Retain decision-making authority in roles they cannot adequately fulfill due to competing commitments.
+   d. Use technical or specialized roles as shields against governance accountability.
+
+### Section 2: Humane Work Standards
+
+All ecosystem activities shall uphold the following humane standards. These standards shall apply to all participants regardless of geographic location, recognizing that human wellbeing needs are universal and not limited by jurisdictional boundaries:
+
+1. **Reasonable Work Hours**: Participants should have the freedom to maintain balanced lives with work expectations not exceeding 40 hours per week on average, with a maximum of 48 hours including overtime when averaged over a reference period, aligning with Article 6 of the European Union's Working Time Directive (2003/88/EC).
+   a. For night work involving special hazards or heavy physical or mental strain (including event management, coordination, or leadership responsibilities), work shall not exceed 8 hours in any 24-hour period, aligning with Article 8 of the European Union's Working Time Directive (2003/88/EC).
+   b. Where the working day is longer than 6 hours, every participant is entitled to a rest break, aligning with Article 4 of the European Union's Working Time Directive (2003/88/EC).
+2. **Essential Rest Periods**:
+   a. Sufficient daily rest of at least 11 consecutive hours in any 24-hour period, aligning with the European Union's Working Time Directive (2003/88/EC).
+   b. Regular weekly rest with at least one full day (24 consecutive hours) of rest per week.
+   c. At least 20 days of complete disengagement per year for all participants directly engaged with JAM Implementers DAO activities or treasury-funded initiatives, with participants free to distribute these throughout the year based on their wellbeing needs. For the broader ecosystem, these standards shall serve as recommended best practices that participants can voluntarily adopt, with JAM Implementers DAO sharing educational resources and guidance within its financial and operational capacity. The JAM Implementers DAO shall advocate for these standards to be incorporated into the Polkadot DAO Constitution to ensure broader ecosystem adoption and consistent application across treasury-funded initiatives.
+3. **Economic Necessity Exception**:
+   a. The JAM Implementers DAO recognizes that economic necessity may require individuals to work beyond these standards to meet basic needs.
+   b. In such cases, the focus shall be on addressing the root cause through fair compensation when financially possible, or through scope reduction, prioritization, and delegation when financial resources are limited.
+   c. Treasury-funded initiatives shall be structured to provide compensation commensurate with the work required, within the constraints of available funding. When sufficient compensation is not possible, the scope of work shall be adjusted accordingly rather than requiring excessive hours.
+   d. Scope adjustments shall be made based on objective assessment of work requirements and available resources, not based on individual financial circumstances, to maintain fairness and avoid creating perverse incentives.
+   e. When economic necessity drives overwork, this shall be documented as a systemic issue requiring governance attention rather than normalized as acceptable practice.
+4. **Emergency Work Considerations**:
+   a. Emergency work periods shall be categorized based on intensity and strain, aligning with scientific research on cognitive fatigue and safety standards:
+      i. High-intensity emergency work (such as urgent bug fixing, critical problem-solving, or high-stress coordination) shall not exceed 11 hours in a 24-hour period, consistent with research on cognitive performance degradation during extended high-intensity work and ensuring at least 11 hours remain for the required rest period.
+      ii. Lower-intensity emergency work (such as monitoring dashboards or maintaining standby presence) may extend to 13 hours in a 24-hour period (calculated as 24 hours minus the mandatory 11-hour rest period), with mandatory short breaks of at least 15 minutes every 2 hours. These breaks should involve stepping away from screens, preferably with exposure to natural light when possible, and engaging in physical movement. Alertness-monitoring protocols must be in place, aligning with EU regulations for certain emergency services while ensuring the minimum 11-hour rest period is preserved.
+   b. All emergency work shall be followed by enhanced rest periods:
+      i. For high-intensity emergency work, a minimum rest period of at least 11 hours must follow the work period.
+      ii. For lower-intensity emergency work, a minimum rest period equal to the duration of the work performed must follow, with a minimum of 11 hours.
+   c. No participant shall be required to participate in more than 3 high-intensity emergency response events per month under normal circumstances.
+   d. Safety, health, or wellbeing-critical emergencies shall be exempt from the monthly limit when necessary to prevent harm, provided that:
+      i. The emergency is properly documented as critical, including:
+         1. The specific nature of the threat to safety, health, or wellbeing
+         2. Why immediate action was required
+         3. Why the emergency could not be addressed within normal work standards
+         4. The expected impact if the emergency had not been addressed
+      ii. Enhanced incentives and rest periods are provided afterward.
+      iii. A post-incident review identifies staffing adjustments to prevent future overreliance on the same responders.
+      iv. A risk assessment is conducted to ensure that the responders' wellbeing is not compromised to a degree that exceeds the potential benefit to those being helped.
+      v. When multiple responders would exceed their limits, a collective decision-making process must be used to determine the appropriate response that minimizes overall harm. This process shall:
+         1. Include at minimum: the technical lead responsible for the affected system, a governance representative, and an uninvolved third party with expertise in wellbeing or ethics
+         2. Consider both the technical urgency of the emergency and the wellbeing impact on responders
+         3. Document the decision-making process, including dissenting opinions
+         4. Be conducted according to procedures defined in the Critical Emergency Response Framework
+   e. The JAM Implementers DAO shall maintain a regularly updated Critical Emergency Response Framework that:
+      i. Proactively identifies and categorizes potential emergency scenarios
+      ii. Establishes clear criteria for what constitutes a "critical emergency" exempt from standard limits
+      iii. Defines response protocols and decision trees for rapid assessment during emergencies
+      iv. Specifies communication procedures and escalation paths
+      v. Is reviewed and updated at least semi-annually based on operational experience
+5. **On-call Rotations**:
+   a. On-call duties shall be clearly defined in writing, with explicit scope limitations and escalation paths.
+   b. On-call duties shall be distributed equitably among qualified team members.
+   c. No participant shall be on-call for more than 1 week at a time or more than 2 weeks per month.
+   d. On-call incentives shall be provided regardless of whether emergencies occur, with appropriate recognition for volunteer participants.
+   e. On-call duty definitions shall be reviewed and updated at least quarterly to prevent scope creep.
+
+### Section 3: Monitoring and Response
+
+The JAM Implementers DAO shall, subject to available funding and resources, implement systems to monitor and protect sustainable work practices:
+
+1. **Regular Work Standards Assessments**:
+   a. Anonymous participant surveys shall be conducted at least quarterly.
+   b. Results shall be publicly reported with appropriate privacy protections.
+   c. Teams scoring below established thresholds shall require intervention.
+2. **Early Warning Indicators**:
+   a. Monitoring for patterns of late-night commits or messages.
+   b. Tracking of work hour distribution and potential overwork.
+   c. Detection of concerning communication patterns indicating stress or burnout.
+3. **Intervention Protocols**:
+   a. Graduated response mechanisms proportional to the severity of concerns.
+   b. Authority to pause non-critical work during periods of unsustainable practices.
+   c. Mandatory review of work allocation and deadlines when indicators show concern.
+4. **Whistleblower Protections**:
+   a. Anonymous reporting channels for work standards non-compliance.
+   b. Protection from retaliation for those reporting concerns.
+   c. Independent review of reported non-compliance.
+
+### Section 4: Treasury Funding and Endorsement Requirements
+
+All initiatives seeking treasury funding or official endorsement shall:
+
+1. Include explicit sustainable work provisions in their proposals, bounty descriptions, grants, endorsement requests, or other funding or support requests.
+2. Budget for sustainable staffing levels that prevent overwork.
+3. Include contingency plans for unexpected work without compromising work standards.
+4. Demonstrate compliance with these standards in all reporting.
+5. Accept that non-compliance of these standards are grounds for funding revocation or withdrawal of endorsement.
+
+These requirements apply regardless of funding amount or funding mechanism (including but not limited to proposals, bounties, grants, sponsorships, and partnerships), including initiatives not receiving any direct funding but benefiting from official endorsement, promotional support, ecosystem branding (such as "Powered by JAM", "Powered by Polkadot", or similar ecosystem associations), or other non-monetary resources from the JAM Implementers DAO.
+
+The JAM Implementers DAO shall, subject to available funding and resources, maintain templates and examples of sustainable work provisions appropriate for different types of funding requests to assist applicants in meeting these requirements. When such templates are not yet available, applicants remain responsible for including appropriate sustainable work provisions in their requests.
+
+### Section 5: Education and Resources
+
+The JAM Implementers DAO shall, subject to available funding and resources, provide:
+
+1. Educational resources on sustainable work practices and burnout prevention.
+2. Training for team leads and independent contributors on maintaining sustainable work environments.
+3. Access to mental health resources for all participants.
+4. Regular workshops on work-life balance in distributed teams and for solo contributors.
+5. Documentation of best practices for sustainable remote work.
+
+When resource constraints limit the provision of these resources, the JAM Implementers DAO shall prioritize those with the greatest impact on participant wellbeing and identify external resources that participants can access independently.
+
+### Section 6: Implementation and Accountability
+
+The JAM Implementers DAO shall, subject to available funding and resources, implement these standards through:
+
+1. Regular audits of work patterns across all ecosystem activities.
+2. Public reporting on compliance with sustainable work standards.
+3. Economic incentive adjustments for teams, projects, or individuals that are found to be non-compliant with these standards.
+4. Temporary or permanent ineligibility for treasury funding, endorsement, or other official recognition following repeated non-compliance.
+5. Recognition and incentives for teams and individuals demonstrating exemplary sustainable work practices.
+6. Nullification of any terms, conditions, waivers, or disclaimers that attempt to circumvent these standards.
+7. Prohibition against requiring participants to "opt out" of these protections as a condition of participation.
+
+When resource constraints limit full implementation of these accountability measures, the JAM Implementers DAO shall prioritize transparency, education, and prevention over accountability measures, while maintaining core protections against the most severe non-compliance.
